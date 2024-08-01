@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SearchKeyword } from './types/searchKeyword.type';
 
 @Component({
   selector: 'app-home',

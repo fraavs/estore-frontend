@@ -1,1 +1,21 @@
-<p>orders works!</p>
+<div>
+    <h2>Order Management</h2>
+  
+    <h3>Order List</h3>
+    <ul>
+      <li *ngFor="let order of orders">
+        <strong>Order ID:</strong> {{ order.id }} | <strong>Status:</strong> {{ order.status }}
+        
+        <h4>Products:</h4>
+        <ul>
+          <li *ngFor="let product of order.productList">
+            Product ID: {{ product.productId }} | Quantity: {{ product.quantity }} | Total Amount: {{ product.totalAmount }}
+          </li>
+        </ul>
+  
+        <input [(ngModel)]="updatedStatus" placeholder="New Status" />
+        <button (click)="updateStatus(order.id)">Update Status</button>
+      </li>
+    </ul>
+  </div>
+  

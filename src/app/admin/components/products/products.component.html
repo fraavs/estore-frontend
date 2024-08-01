@@ -1,1 +1,35 @@
-<p>products works!</p>
+<div>
+    <h2>Product Management</h2>
+  
+    <form (ngSubmit)="addProduct()">
+      <label>Name:</label>
+      <input [(ngModel)]="newProduct.name" name="name" required />
+  
+      <label>Description:</label>
+      <input [(ngModel)]="newProduct.description" name="description" required />
+  
+      <label>Image URL:</label>
+      <input [(ngModel)]="newProduct.imgUrl" name="imgUrl" required />
+  
+      <label>Quantity:</label>
+      <input type="number" [(ngModel)]="newProduct.quantity" name="quantity" required />
+  
+      <label>Price:</label>
+      <input type="number" [(ngModel)]="newProduct.price" name="price" required />
+  
+      <label>Category ID:</label>
+      <input type="number" [(ngModel)]="newProduct.categoryId" name="categoryId" required />
+  
+      <button type="submit">Add Product</button>
+    </form>
+  
+    <h3>Product List</h3>
+    <ul>
+      <li *ngFor="let product of products">
+        {{ product.name }} - {{ product.price }}
+        <button (click)="editProduct(product)">Edit</button>
+        <button (click)="deleteProduct(product.id)">Delete</button>
+      </li>
+    </ul>
+  </div>
+  
