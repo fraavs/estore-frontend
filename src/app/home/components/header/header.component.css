@@ -50,6 +50,7 @@
     margin: 5px 5px;
     width: 100px;
     margin-right: 100px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .search .search-button:hover {
@@ -58,8 +59,31 @@
     background-color: black;
 }
 
-.bag {
+.login-container {
     width: 10%;
 }
 
+.login-container .btn {
+    font-size: 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 35px;
+    width: 112px;
+    color: gray;
+    background-color: #f2f2f2;
+    border: none;
+}
 
+.login-container .btn:hover {
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    color: black;
+}
+
+.cart-wishlist {
+    width: 10%;
+}
+
+.cart-wishlist .btn_cart {
+    border: none;
+    margin-left: 50px;
+}

@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { UsersService } from 'src/app/home/services/users/users.service';
 
 @Component({
   selector: 'app-user-registration',
@@ -15,18 +15,19 @@ export class UserRegistrationComponent {
   };
   message: string = '';
 
-  constructor(private http: HttpClient) { }
 
-  registerUser() {
-    this.http.post('/api/auth/register', this.userData).subscribe(
+  constructor(private usersService: UsersService) { }
+
+  register() {
+    this.usersService.register(this.userData).subscribe(
       response => {
-        this.message = 'User registered successfully!';
-        this.userData = { username: '', email: '', password: '' };
+        console.log(response.message);
       },
       error => {
-        this.message = error.error.message || 'Registration failed. Please try again.';
+        console.error('Error during registration:', error);
       }
-    );
+    )
   }
 
+  
 }

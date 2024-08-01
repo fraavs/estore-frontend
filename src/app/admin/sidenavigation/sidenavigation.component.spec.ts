@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SidenavigaionComponent } from './sidenavigaion.component';
+import { SidenavigationComponent } from './sidenavigation.component';
 
-describe('SidenavigaionComponent', () => {
-  let component: SidenavigaionComponent;
-  let fixture: ComponentFixture<SidenavigaionComponent>;
+describe('SidenavigationComponent', () => {
+  let component: SidenavigationComponent;
+  let fixture: ComponentFixture<SidenavigationComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SidenavigaionComponent ]
+      declarations: [ SidenavigationComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(SidenavigaionComponent);
+    fixture = TestBed.createComponent(SidenavigationComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

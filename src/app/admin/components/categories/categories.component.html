@@ -1,1 +1,19 @@
-<p>categories works!</p>
+<div>
+  <h2>Create Category</h2>
+  <form (submit)="createCategory(name.value, description.value)">
+    <input #name type="text" placeholder="Category Name">
+    <input #description type="text" placeholder="Category Description">
+    <button type="submit">Create</button>
+  </form>
+</div>
+
+<div>
+  <h2>Categories</h2>
+  <ul>
+    <li *ngFor="let category of categories">
+      <p>{{category.id}} - {{ category.name }} - {{ category.description }}</p>
+      <button (click)="updateCategory(category.id, name.value, description.value)">Update</button>
+      <button (click)="deleteCategory(category.id)">Delete</button>
+    </li>
+  </ul>
+</div>

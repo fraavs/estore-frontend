@@ -1,8 +1,27 @@
-<form (submit)="registerUser()">
-    <input type="text" [(ngModel)]="userData.username" placeholder="Username" required>
-    <input type="email" [(ngModel)]="userData.email" placeholder="Email" required>
-    <input type="password" [(ngModel)]="userData.password" placeholder="Password" required>
-    <button type="submit">Register</button>
-    <p>{{ message }}</p>
-  </form>
-  
+<div class="container">
+  <div class="body">
+    <div class="text-center">
+      <h2>Become A Member</h2>
+    </div>
+
+    <form (submit)="register()">
+      <div class="form-username">
+        <label for="username">UserName*</label>
+        <br>
+        <input type="text" [(ngModel)]="userData.username" placeholder="Username" required>
+      </div>
+      <div class="form-email">
+        <label for="email">Email*</label>
+        <br>
+        <input type="email" [(ngModel)]="userData.email" placeholder="Email" required>
+      </div>
+      <div class="form-password">
+        <label for="password">Password*</label>
+        <br>
+        <input type="password" [(ngModel)]="userData.password" placeholder="Password" required>
+      </div>
+      <button type="submit" class="btn">Register</button>
+      <p>{{ message }}</p>
+    </form>
+  </div>
+</div>

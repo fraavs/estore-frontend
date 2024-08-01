@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { AuthService } from '../../../../auth.service';
+import { UsersService } from 'src/app/home/services/users/users.service';
 
 @Component({
   selector: 'app-user-login',
@@ -9,25 +10,38 @@ import { AuthService } from '../../../../auth.service';
   styleUrls: ['./user-login.component.css']
 })
 export class UserLoginComponent {
-  loginData = {
+  credentials = {
     email: '',
     password: '',
   }
   message = '';
-  
-  constructor(private http: HttpClient, private router: Router, private authService: AuthService) {}
 
-  loginUser() {
-    this.http.post('/api/auth/login', this.loginData).subscribe(
-      (response: any) => {
-        this.authService.setToken(response.token);
-        this.router.navigate(['/products']);
+  constructor(private usersService: UsersService, private router: Router) { }
+
+  login() {
+    this.usersService.login(this.credentials).subscribe(
+      response => {
+        console.log('Login successful, token:', response.token);
       },
       error => {
-        this.message = error.error.message || 'Login failed. Please try again.';
+        console.error('Error during login:', error);
       }
     );
   }
 
+  logout() {
+    this.usersService.logout().subscribe(
+      response => {
+        console.log(response.message);
+      },
+      error => {
+        console.error('Error during logout:', error);
+      }
+    );
+  }
+
+  navigateToRegister() {
+    this.router.navigate(['/home/register']);
+  }
 
 }

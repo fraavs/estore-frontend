@@ -1,0 +1,14 @@
+<div class="body">
+    <div class="container">
+        <div class="row">
+            <ul class="category-list">
+                <li (click)="selectComponent('categories')">Categories</li>
+                <li (click)="selectComponent('products')">Products</li>
+                <li (click)="selectComponent('orders')">Orders</li>
+            </ul>
+        </div>
+        <div class="right_row">
+            <ng-container *ngComponentOutlet="selectedComponent"></ng-container>
+        </div>
+    </div>
+</div>

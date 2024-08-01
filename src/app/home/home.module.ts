@@ -12,6 +12,9 @@ import { FormsModule } from "@angular/forms";
 import { HeaderComponent } from './components/header/header.component';
 import { CatnavigationComponent } from './components/catnavigation/catnavigation.component';
 import { SidenavigationComponent } from './components/sidenavigation/sidenavigation.component';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
+
 
 @NgModule({
     declarations: [
@@ -30,6 +33,8 @@ import { SidenavigationComponent } from './components/sidenavigation/sidenavigat
         HomeRoutingModule,
         ReactiveFormsModule,
         FormsModule,
+        MatMenuModule,
+        MatIconModule,
     ],
     providers: []
 })

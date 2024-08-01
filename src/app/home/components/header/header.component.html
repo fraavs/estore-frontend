@@ -5,11 +5,30 @@
                 <img src="../../../../assets/images/logo-home.avif" style="width: 200px;" alt="">
             </div>
             <div class="search">
-                <input type="text" style="width: 500px; height: 30px;" placeholder="Search products">
-                <button class="search-button">SEARCH</button>
+                <ng-container *ngIf="displaySearch">
+                    <input #keyword #categoryOptions type="text" style="width: 500px; height: 30px;" placeholder="Search products">
+                    <button class="search-button" (click)="onClickSearch(keyword.value, categoryOptions.value)">SEARCH</button>
+                </ng-container>
             </div>
-            <div class="bag">
-                <h1>bag</h1>
+            <div class="login-container">
+                <ng-container *ngIf="username; else loginTemplate">
+                    <button mat-button [matMenuTriggerFor]="menu" class="btn">Hi! {{username}}</button>
+                    <mat-menu #menu="matMenu">
+                        <button mat-menu-item class="btn_menu" (click)="logout()">Logout</button>
+                    </mat-menu>
+                </ng-container>
+
+                <ng-template #loginTemplate>
+                    <button class="btn" (click)="navigateToLogin()">Sign In / Join</button>
+                </ng-template>
+
+            </div>
+
+            <div class="cart-wishlist">
+                <button class="btn_cart">
+                    <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="shopping_cart"
+                        class="shopping_icon"></mat-icon>
+                </button>
             </div>
         </div>
     </div>
