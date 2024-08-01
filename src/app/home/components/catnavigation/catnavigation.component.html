@@ -1,0 +1,12 @@
+<div class="container">
+    <div class="navigation-container">
+        <ul>
+            <li><a routerLink="/home/products">HOME</a></li>
+            <ng-container>
+                <li *ngFor="let category of categories">
+                    <a>{{category.name}}</a>
+                </li>
+            </ng-container>
+        </ul>
+    </div>
+</div>

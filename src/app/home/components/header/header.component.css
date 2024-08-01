@@ -1,0 +1,65 @@
+.header {
+    max-width: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.section {
+    width: 60%;
+    background-color: white;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 50px;
+    display: inline-block;
+}
+
+
+.header .section div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand {
+    margin-top: 1;
+    margin-bottom: 1;
+    width: 20%;
+}
+
+.search {
+    width: 60%;
+    height: 2.5em;
+    display: inline-block;
+    border: none;
+}
+
+.search input {
+    background-color: #f2f2f2;
+    border: 1px solid #f2f2f2;
+    outline: none;
+}
+
+.search input:hover {
+    background-color: white;
+    transition: 0.3s ease-in-out;
+}
+
+.search .search-button {
+    border-width: 1px;
+    border-color: black;
+    height: 32px;
+    margin: 5px 5px;
+    width: 100px;
+    margin-right: 100px;
+}
+
+.search .search-button:hover {
+    transition: 0.3s ease-in-out;
+    color: white;
+    background-color: black;
+}
+
+.bag {
+    width: 10%;
+}
+
+

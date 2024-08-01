@@ -1,0 +1,10 @@
+.container {
+    max-width: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container .main-product {
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+}

@@ -9,6 +9,9 @@ import { UserLoginComponent } from "./components/users/user-login/user-login.com
 import { UserRegistrationComponent } from "./components/users/user-registration/user-registration.component";
 import { ProductListComponent } from "./components/product-list/product-list.component";
 import { FormsModule } from "@angular/forms";
+import { HeaderComponent } from './components/header/header.component';
+import { CatnavigationComponent } from './components/catnavigation/catnavigation.component';
+import { SidenavigationComponent } from './components/sidenavigation/sidenavigation.component';
 
 @NgModule({
     declarations: [
@@ -16,6 +19,9 @@ import { FormsModule } from "@angular/forms";
         UserLoginComponent,
         UserRegistrationComponent,
         ProductListComponent,
+        HeaderComponent,
+        CatnavigationComponent,
+        SidenavigationComponent,
     ],
     imports: [
         CommonModule,

@@ -1,0 +1,32 @@
+.container {
+    max-width: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navigation-container {
+    width: 60%;
+    background-color: #f2f2f2;
+    border-top: white solid 1px;
+    height: 50px;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.navigation-container ul li {
+    list-style-type: none;
+    display: inline-block;
+    height: 2.5em;
+}
+
+.navigation-container ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+}
+
+.navigation-container ul li a:hover {
+    color: gray;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+    text-decoration: underline;
+}
