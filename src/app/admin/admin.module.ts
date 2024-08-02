@@ -11,6 +11,8 @@ import { CategoriesComponent } from './components/categories/categories.componen
 import { OrdersComponent } from './components/orders/orders.component';
 import { FormsModule } from "@angular/forms";
 import { CategoriesService } from "../home/services/categories/categories.service";
+import { MatIconModule } from '@angular/material/icon';
+
 
 @NgModule({
     declarations: [
@@ -27,6 +29,7 @@ import { CategoriesService } from "../home/services/categories/categories.servic
         HttpClientModule,
         RouterModule,
         AdminRoutingModule,
+        MatIconModule,
         FormsModule,
     ],
     providers: [

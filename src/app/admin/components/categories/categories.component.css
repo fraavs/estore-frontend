@@ -1,100 +1,105 @@
 div h2 {
-    text-align: center;
+  text-align: center;
 }
 
 .container {
-    max-width: 100%;
+  max-width: 100%;
 }
 
 form {
-    width: 80%;
-    margin-left: 10%;
-    margin-right: 10%;
-    display: flex;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  display: flex;
 }
 
 .category {
-    width: 50%;
+  width: 50%;
 }
 
 label {
-    color: gray;
-    font-size: 15px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: gray;
+  font-size: 15px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 input {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    width: 80%;
-    height: 35px;
-    margin-top: 10px;
-    border: 1px solid #f2f2f2;
-    background-color: #f2f2f2;
-    outline: none;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  width: 80%;
+  height: 35px;
+  margin-top: 10px;
+  border: 1px solid #f2f2f2;
+  background-color: #f2f2f2;
+  outline: none;
 }
 
 input:hover {
-    background-color: white;
-    transition: 0.3s ease-in-out;
-    border: 1px solid gray;
+  background-color: white;
+  transition: 0.3s ease-in-out;
+  border: 1px solid gray;
 }
 
 .btn {
-    margin-top: 30px;
-    height: 40px;
-    width: 70px;
-    border: 1px solid #f2f2f2;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-right: 5px;
+  padding: 5px 10px;
+  margin-top: 30px;
+  height: 40px;
+  width: 70px;
+  border: 1px solid #f2f2f2;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .btn:hover {
-    background-color: black;
-    color: white;
-    transition: 0.3s ease-in-out;
+  background-color: black;
+  color: white;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
 }
 
 
 
 .category-table {
-    width: 80%;
-    border-collapse: collapse;
-    margin-left: 10%;
-    margin-right: 10%;
+  width: 80%;
+  border-collapse: collapse;
+  margin-left: 10%;
+  margin-right: 10%;
 }
-  
-  .category-table th,
-  .category-table td {
-    border: 1px solid #ddd;
-    padding: 10px;
-    text-align: left;
-  }
-  
-  .category-table th {
-    background-color: #f2f2f2;
-    font-weight: 400;
-    font-size: 15px;
-  }
-  
-  .category-table tr:nth-child(even) {
-    background-color: #f9f9f9;
-  }
-  
-  .category-table tr:hover {
-    background-color: #f1f1f1;
-  }
-  
-  .category-table button {
-    margin-right: 5px;
-    padding: 5px 10px;
-    border: none;
-    background-color: #007bff;
-    color: white;
-    cursor: pointer;
-    border-radius: 4px;
-    transition: background-color 0.3s;
-  }
-  
-  .category-table button:hover {
-    background-color: #0056b3; /* Darker blue on hover */
-  }
-  
+
+.category-table th,
+.category-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.category-table th {
+  background-color: #f2f2f2;
+  font-weight: 400;
+  font-size: 15px;
+}
+
+.category-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.category-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.category-table button {
+  margin-right: 5px;
+  padding: 5px 10px;
+  border: none;
+  background-color: #f2f2f2;
+  color: black;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  height: 35px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.category-table button:hover {
+  background-color: black;
+  /* Darker blue on hover */
+  color: white;
+}

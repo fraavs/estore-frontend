@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class ProductsService {
-  private apiUrl = 'http://192.168.144.132:5231/api/admin/products';
+  private apiUrl = 'http://192.168.144.132:3000/api/admin/products';
 
   constructor(private httpClient: HttpClient) { }
 

@@ -1,17 +1,18 @@
 <div class="container">
   <h2>Create Category</h2><hr style="width: 80%;">
-  <form (submit)="createCategory(name.value, description.value)">
+  <form (submit)="createCategory(name.value, description.value)" novalidate>
     <div class="category">
       <label for="category-name">Category Name</label>
       <br>
-      <input #name type="text">
+      <input #name type="text" required>
     </div>
     <div class="category">
       <label for="category-description">Category Description</label>
       <br>
-      <input #description type="text">
+      <input #description type="text" required>
     </div>
     <button type="submit" class="btn">Create</button>
+    <div *ngIf="formError" style="color: red;">Please fill in all fields.</div>
   </form>
 </div>
 
@@ -35,10 +36,31 @@
         <td>{{ category.name }}</td>
         <td>{{ category.description }}</td>
         <td>
-          <button (click)="updateCategory(category.id, name.value, description.value)">Update</button>
-          <button (click)="deleteCategory(category.id)">Delete</button>
+          <button   (click)="setEditingCategory(category)">Edit</button>
+          <button   (click)="deleteCategory(category.id)">Delete</button>
         </td>
       </tr>
     </tbody>
   </table>
+</div>
+
+
+
+<!-- Editing Form -->
+<div *ngIf="editingCategory" class="container">
+  <h2>Edit Category</h2><hr style="width: 80%;">
+  <form (submit)="updateCategory(editingCategory)" novalidate>
+    <div class="category">
+      <label for="category-name">Category Name</label>
+      <br>
+      <input [(ngModel)]="editingCategory.name" name="name" type="text" required>
+    </div>
+    <div class="category">
+      <label for="category-description">Category Description</label>
+      <br>
+      <input [(ngModel)]="editingCategory.description" name="description" required type="text">
+    </div>
+    <button type="submit" class="btn">Update</button>
+    <button type="button" class="btn" (click)="cancelEdit()">Cancel</button>
+  </form>
 </div>

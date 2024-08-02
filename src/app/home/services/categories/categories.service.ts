@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Category } from '../../types/category.type';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
@@ -7,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class CategoriesService {
-  private apiUrl = 'http://192.168.144.132:5231/api/admin/categories';
+  private apiUrl = 'http://192.168.144.132:3000/api/admin/categories';
 
   constructor(private httpClient: HttpClient) { }
 

@@ -1,1 +1,16 @@
-<p>sidenavigation works!</p>
+
+<div class="sidenav">
+    <h2>Category</h2>
+    <ul>
+        <li *ngFor="let product of products">
+            <a (click)="toggleDropdown(product.id)">
+                {{ product.name }} &#9662;  <!-- Downward arrow icon -->
+            </a>
+            <ul *ngIf="product.isOpen">
+                <li *ngFor="let variant of product.variants">
+                    <a (click)="selectVariant(variant.id)">{{ variant.name }}</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>

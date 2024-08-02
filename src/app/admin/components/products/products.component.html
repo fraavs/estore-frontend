@@ -1,58 +1,74 @@
 <div>
-  <h2>Product Management</h2>
+    <h2>Product Management</h2>
 
-  <form (ngSubmit)="addProduct()" class="product-form">
-      <div class="form-row">
-          <div class="form-group">
-              <label>Name:</label>
-              <input [(ngModel)]="newProduct.name" name="name" required />
-          </div>
-          <div class="form-group">
-              <label>Description:</label>
-              <input [(ngModel)]="newProduct.description" name="description" required />
-          </div>
-      </div>
-      <div class="form-row">
-          <div class="form-group">
-              <label>Image URL:</label>
-              <input [(ngModel)]="newProduct.imgUrl" name="imgUrl" required />
-          </div>
-          <div class="form-group">
-              <label>Quantity:</label>
-              <input type="number" [(ngModel)]="newProduct.quantity" name="quantity" required />
-          </div>
-      </div>
-      <div class="form-row">
-          <div class="form-group">
-              <label>Price:</label>
-              <input type="number" [(ngModel)]="newProduct.price" name="price" required />
-          </div>
-          <div class="form-group">
-              <label>Category ID:</label>
-              <input type="number" [(ngModel)]="newProduct.categoryId" name="categoryId" required />
-          </div>
-      </div>
-      <button type="submit">Add Product</button>
-  </form>
+    <form (ngSubmit)="addProduct()" class="product-form">
+        <div class="form-row">
+            <div class="form-group">
+                <label>Name:</label>
+                <input [(ngModel)]="newProduct.name" name="name" required />
+            </div>
+            <div class="form-group">
+                <label>Description:</label>
+                <input [(ngModel)]="newProduct.description" name="description" required />
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group">
+                <label>Image URL:</label>
+                <input [(ngModel)]="newProduct.imgUrl" name="imgUrl" required />
+            </div>
+            <!-- <div class="form-group">
+                <label>Upload Image:</label>
+                <input type="file" (change)="onFileChange($event)" accept="image/*" />
+            </div> -->
+            <div class="form-group">
+                <label>Quantity:</label>
+                <input type="number" [(ngModel)]="newProduct.quantity" name="quantity" required />
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group">
+                <label>Price:</label>
+                <input type="number" [(ngModel)]="newProduct.price" name="price" required />
+            </div>
+            <div class="form-group">
+                <label>Category</label>
+                <select [(ngModel)]="newProduct.categoryId" name="categoryId" (change)="onCategoryChange($event)"
+                    required>
+                    <option *ngFor="let category of categories" [value]="category.id">{{category.name}}</option>
+                </select>
+            </div>
+        </div>
+        <button type="submit">{{ newProduct.id? 'Updata Product' : 'Add Product' }}</button>
+    </form>
 
-  <h2>Products List</h2>
-  <table class="product-table">
-      <thead>
-          <tr>
-              <th>Name</th>
-              <th>Price</th>
-              <th>Actions</th>
-          </tr>
-      </thead>
-      <tbody>
-          <tr *ngFor="let product of products">
-              <td>{{ product.name }}</td>
-              <td>\${{ product.price.toFixed(2) }}</td>
-              <td>
-                  <button (click)="editProduct(product)">Edit</button>
-                  <button (click)="deleteProduct(product.id)">Delete</button>
-              </td>
-          </tr>
-      </tbody>
-  </table>
+    <h2>Products List</h2>
+    <table class="product-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Price</th>
+                <th>Image</th>
+                <th>Quantity</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of products">
+                <td>{{ product.name }}</td>
+                <td>{{ product.categoryName }}</td>
+                <td>${{ product.price.toFixed(2) }}</td>
+                <td>
+                    <img [src]="'../../../../assets/images/' + product.imgUrl"
+                        style="width: 100px; height: 100px; margin: 0 auto;" alt="">
+                </td>
+                <td>{{product.quantity}}</td>
+                <td>
+                    <button (click)="editProduct(product)">Edit</button>
+                    <button (click)="deleteProduct(product.id)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </div>

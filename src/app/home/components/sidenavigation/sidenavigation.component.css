@@ -1,0 +1,46 @@
+.sidenav {
+    margin-top: 20px;
+    width: 250px; /* Side navigation width */
+    background-color: #f4f4f4;
+    padding: 15px;
+    height: 100%; /* Full height */
+}
+
+.sidenav h2 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.sidenav ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0;
+}
+
+.sidenav > ul > li {
+    position: relative;
+}
+
+.sidenav a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    padding: 10px;
+    transition: background 0.3s;
+}
+
+.sidenav a:hover {
+    background-color: #ddd; /* Change background on hover */
+}
+
+.sidenav ul ul {
+    padding-left: 20px; /* Indent dropdown items */
+    display: none; /* Hide dropdown by default */
+}
+
+.sidenav ul ul li {
+    padding: 8px 10px;
+}
+
+.sidenav ul li:hover > ul {
+    display: block; /* Show dropdown on hover */
+}
