@@ -8,6 +8,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ProductsService {
   private apiUrl = 'http://192.168.144.132:3000/api/admin/products';
+  private apiUrlclient = 'http://192.168.144.132:3000/api/product';
 
   constructor(private httpClient: HttpClient) { }
 
@@ -18,6 +19,11 @@ export class ProductsService {
   getProducts(): Observable<any[]> {
     return this.httpClient.get<any>(this.apiUrl);
   }
+
+  getAllProduct(): Observable<any[]> {
+    return this.httpClient.get<any>(this.apiUrlclient);
+  }
+
 
   updateProduct(id: number, product: any): Observable<any> {
     return this.httpClient.put(`${this.apiUrl}/${id}`, product);

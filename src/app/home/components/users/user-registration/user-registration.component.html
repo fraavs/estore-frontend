@@ -8,17 +8,17 @@
       <div class="form-username">
         <label for="username">UserName*</label>
         <br>
-        <input type="text" [(ngModel)]="userData.username" placeholder="Username" required>
+        <input type="text" [(ngModel)]="userData.username" placeholder="Username" name="username" required>
       </div>
       <div class="form-email">
         <label for="email">Email*</label>
         <br>
-        <input type="email" [(ngModel)]="userData.email" placeholder="Email" required>
+        <input type="email" [(ngModel)]="userData.email" placeholder="Email" name="email" required>
       </div>
       <div class="form-password">
         <label for="password">Password*</label>
         <br>
-        <input type="password" [(ngModel)]="userData.password" placeholder="Password" required>
+        <input type="password" [(ngModel)]="userData.password" placeholder="Password" name="password" required>
       </div>
       <button type="submit" class="btn">Register</button>
       <p>{{ message }}</p>

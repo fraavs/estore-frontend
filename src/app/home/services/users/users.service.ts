@@ -11,7 +11,7 @@ export class UsersService {
 
   private apiUrl = 'http://192.168.144.132:3000/api/auth';
   private token: string | null = null;
-  private currentUserSubject: BehaviorSubject<any> = new BehaviorSubject(null);
+  private currentUserSubject: BehaviorSubject<string | null> = new BehaviorSubject<string | null>(localStorage.getItem('jwttoken'));
 
 
   constructor(private httpClient: HttpClient) {

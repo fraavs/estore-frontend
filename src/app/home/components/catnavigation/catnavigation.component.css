@@ -22,6 +22,7 @@
     text-decoration: none;
     color: black;
     font-size: 15px;
+    margin-right: 40px;
 }
 
 .navigation-container ul li a:hover {

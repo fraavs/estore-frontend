@@ -14,6 +14,7 @@ import { CatnavigationComponent } from './components/catnavigation/catnavigation
 import { SidenavigationComponent } from './components/sidenavigation/sidenavigation.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
+import { ProductsComponent } from './components/products/products.component';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { MatIconModule } from '@angular/material/icon';
         HeaderComponent,
         CatnavigationComponent,
         SidenavigationComponent,
+        ProductsComponent,
     ],
     imports: [
         CommonModule,

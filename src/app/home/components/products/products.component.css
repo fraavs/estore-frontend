@@ -1,0 +1,78 @@
+.main-product-container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.main-product-container .product-card {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    display: inline-block;
+    flex-direction: column;
+    box-shadow: 3px 1px 14px 0px gray;
+    border: 1px solid #f2f2f2;
+}
+
+
+.main-product-container .product-card .product-image-container img {
+    display: flex;
+    justify-content: center;
+    padding: 10px 10px;
+}
+
+.main-product-container .product-card .product-info {
+    padding: 5px;
+    text-align: center;
+}
+
+.main-product-container .product-card .product-info h5 {
+    font-weight: 400;
+    font-size: 15px;
+    margin: 5px 5px;
+}
+
+.main-product-container .product-card .product-info .product-price {
+    margin: 5px 5px;
+    font-size: 18px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    color: gray;
+}
+
+.main-product-container .product-card .cart-button {
+    display: flex;
+}
+
+.main-product-container .product-card .cart-button .cart-icon-container {
+    font-size: 1.2em;
+    padding-top: 1px;
+    margin-left: 10px;
+}
+
+.main-product-container .product-card .cart-button .cart-text {
+    padding-top: 6px;
+    margin-left: 10px;
+}
+
+
+.main-product-container .product-card .cart-button button {
+    width: 200px;
+    display: flex;
+    height: 50px;
+    padding-top: 10px;
+    background-color: white;
+    border: 1px solid black;
+}
+.main-product-container .product-card .cart-button button:hover {
+    background-color: black;
+    color: white;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}

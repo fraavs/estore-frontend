@@ -22,6 +22,9 @@ export class UserLoginComponent {
     this.usersService.login(this.credentials).subscribe(
       response => {
         console.log('Login successful, token:', response.token);
+        setTimeout(() => {
+          this.router.navigate(['/home/products'])
+        })
       },
       error => {
         console.error('Error during login:', error);

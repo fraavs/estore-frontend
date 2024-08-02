@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { CategoriesService } from '../../services/categories/categories.service';
+
+
 @Component({
   selector: 'app-catnavigation',
   templateUrl: './catnavigation.component.html',
@@ -8,20 +10,17 @@ import { HttpClient } from '@angular/common/http';
 export class CatnavigationComponent implements OnInit {
   categories: any[] = [];
 
-  constructor(private http: HttpClient) { }
+  constructor(private categoriesService: CategoriesService) { }
+
 
   ngOnInit(): void {
-    this.loadCategories();
-  }
-  
-  loadCategories() {
-    this.http.get('/api/categories').subscribe(
-      (response: any) => {
-        this.categories = response;
-      },
-      error => {
-        console.log('Error fetching categories', error);
-      }
+    this.getCategories();
+}
+  getCategories() {
+    this.categoriesService.getCategories().subscribe(
+      data => this.categories = data,
+      error => console.error(error) 
     );
   }
+
 }

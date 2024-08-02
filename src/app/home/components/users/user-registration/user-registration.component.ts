@@ -1,6 +1,6 @@
-import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { UsersService } from 'src/app/home/services/users/users.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-registration',
@@ -16,12 +16,15 @@ export class UserRegistrationComponent {
   message: string = '';
 
 
-  constructor(private usersService: UsersService) { }
+  constructor(private usersService: UsersService, private router: Router) { }
 
   register() {
     this.usersService.register(this.userData).subscribe(
       response => {
         console.log(response.message);
+        setTimeout(() => {
+          this.router.navigate(['home/login']);
+        }, 2000);
       },
       error => {
         console.error('Error during registration:', error);
@@ -29,5 +32,5 @@ export class UserRegistrationComponent {
     )
   }
 
-  
+
 }

@@ -8,12 +8,12 @@
       <div class="form-email">
         <label for="email">Email*</label>
         <br>
-        <input type="email" [(ngModel)]="credentials.email" placeholder="Email" required>
+        <input type="email" [(ngModel)]="credentials.email" placeholder="Email" name="email" required>
       </div>
       <div class="form-password">
         <label for="password">Password*</label>
         <br>
-        <input type="password" [(ngModel)]="credentials.password" placeholder="Password" required>
+        <input type="password" [(ngModel)]="credentials.password" placeholder="Password" name="password" required>
       </div>
       <button type="submit" class="btn">Login</button>
       <button (click)="navigateToRegister()" class="btn">Register</button>
