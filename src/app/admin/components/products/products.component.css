@@ -1,0 +1,111 @@
+div h2 {
+    text-align: center;
+}
+.product-form {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #f2f2f2;
+    background-color: white;
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.form-group {
+    color: gray;
+    flex: 1;
+    margin-right: 10px;
+}
+
+.form-group:last-child {
+    margin-right: 0; /* Remove margin for the last item in the row */
+}
+
+.product-form label {
+    display: block;
+    margin: 5px 0;
+}
+
+.product-form input {
+    margin-bottom: 10px;
+    padding: 8px;
+    width: calc(100% - 16px);
+    border: 1px solid #f2f2f2;
+    outline: none;
+    background-color: #f2f2f2;
+}
+
+.product-form input:hover {
+    border: 1px solid gray;
+    transition: 0.3s ease-in-out;
+    background-color: white;
+
+}
+
+.product-form button {
+    display: flex;
+    margin: auto;
+    padding: 10px 15px;
+    border: 1px solid #f2f2f2;
+    background-color: #f2f2f2;
+    color: gray;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.product-form button:hover {
+    background-color: black;
+    color: white; /* Darker green on hover */
+}
+
+
+
+.product-table {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.product-table th,
+.product-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+.product-table th {
+    background-color: #f4f4f4;
+    font-weight: 400;
+}
+
+.product-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.product-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.product-table button {
+    margin-right: 5px;
+    padding: 5px 10px;
+    border: none;
+    background-color: #f2f2f2;
+    color: black;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.product-table button:hover {
+    background-color: black;
+    column-rule: white; /* Darker blue on hover */
+}

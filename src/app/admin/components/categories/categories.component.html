@@ -1,19 +1,44 @@
-<div>
-  <h2>Create Category</h2>
+<div class="container">
+  <h2>Create Category</h2><hr style="width: 80%;">
   <form (submit)="createCategory(name.value, description.value)">
-    <input #name type="text" placeholder="Category Name">
-    <input #description type="text" placeholder="Category Description">
-    <button type="submit">Create</button>
+    <div class="category">
+      <label for="category-name">Category Name</label>
+      <br>
+      <input #name type="text">
+    </div>
+    <div class="category">
+      <label for="category-description">Category Description</label>
+      <br>
+      <input #description type="text">
+    </div>
+    <button type="submit" class="btn">Create</button>
   </form>
 </div>
 
-<div>
-  <h2>Categories</h2>
-  <ul>
-    <li *ngFor="let category of categories">
-      <p>{{category.id}} - {{ category.name }} - {{ category.description }}</p>
-      <button (click)="updateCategory(category.id, name.value, description.value)">Update</button>
-      <button (click)="deleteCategory(category.id)">Delete</button>
-    </li>
-  </ul>
+<div class="container">
+  <h2>Categories List</h2>
+  <hr style="width: 80%;">
+
+  <table class="category-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let category of categories">
+        <td>{{ category.id }}</td>
+        <td>{{ category.name }}</td>
+        <td>{{ category.description }}</td>
+        <td>
+          <button (click)="updateCategory(category.id, name.value, description.value)">Update</button>
+          <button (click)="deleteCategory(category.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>

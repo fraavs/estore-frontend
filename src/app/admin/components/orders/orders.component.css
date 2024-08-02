@@ -1,0 +1,60 @@
+div h2 {
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.order-table {
+    width: 80%;
+    margin-left: 10%;
+    margin-left: 10%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.order-table th,
+.order-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+.order-table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+.order-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.order-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.order-table ul {
+    padding-left: 20px;
+    margin: 0;
+    list-style-type: none; /* Remove bullet points */
+}
+
+.order-table input {
+    padding: 5px;
+    margin-top: 5px;
+    width: calc(80% - 10px); /* Adjust width accordingly */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.order-table button {
+    padding: 5px 10px;
+    margin-left: 5px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.order-table button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
