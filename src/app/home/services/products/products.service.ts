@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { Product } from '../../types/product.type';
 
 
 @Injectable({
@@ -16,14 +17,23 @@ export class ProductsService {
     return this.httpClient.post(this.apiUrl, product);
   }
 
-  getProducts(): Observable<any[]> {
+  getProducts(query?: string): Observable<Product[]> {
+    if (query) {
+      this.apiUrl += '?' +query;
+    }
     return this.httpClient.get<any>(this.apiUrl);
   }
 
-  getAllProduct(): Observable<any[]> {
+  getAllProduct(query?: string): Observable<Product[]> {
+    if (query) {
+      this.apiUrl += '?' +query;
+    }
     return this.httpClient.get<any>(this.apiUrlclient);
   }
 
+  getProductById(id: number): Observable<Product[]> {
+    return this.httpClient.get<Product[]>(`${this.apiUrlclient}/${id}`);
+  }
 
   updateProduct(id: number, product: any): Observable<any> {
     return this.httpClient.put(`${this.apiUrl}/${id}`, product);

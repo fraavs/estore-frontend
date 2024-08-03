@@ -1,7 +1,7 @@
 <div class="main-product-container">
     <div class="product-card" *ngFor="let product of products">
         <div class="product-image-container">
-            <a href="#">
+            <a routerLink="../products/{{product.id}}">
                 <img width="180px" height="180px" [src]="'../../../../assets/images/' + product.imgUrl" alt="">
             </a>
         </div>

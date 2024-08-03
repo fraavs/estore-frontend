@@ -15,6 +15,8 @@ import { SidenavigationComponent } from './components/sidenavigation/sidenavigat
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { ProductsComponent } from './components/products/products.component';
+import { ProductdetailsComponent } from './components/productdetails/productdetails.component';
+import { CartComponent } from './components/cart/cart.component';
 
 
 @NgModule({
@@ -27,6 +29,8 @@ import { ProductsComponent } from './components/products/products.component';
         CatnavigationComponent,
         SidenavigationComponent,
         ProductsComponent,
+        ProductdetailsComponent,
+        CartComponent,
     ],
     imports: [
         CommonModule,
