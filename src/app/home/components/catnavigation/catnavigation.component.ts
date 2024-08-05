@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { CategoriesService } from '../../services/categories/categories.service';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { CategoriesStoreItem } from '../../services/categories/categories.storeItem';
+import { NavigationEnd, Router } from '@angular/router';
+import { Category } from '../../types/category.type';
+import { filter } from 'rxjs';
 
 
 @Component({
@@ -7,20 +10,20 @@ import { CategoriesService } from '../../services/categories/categories.service'
   templateUrl: './catnavigation.component.html',
   styleUrls: ['./catnavigation.component.css']
 })
-export class CatnavigationComponent implements OnInit {
-  categories: any[] = [];
+export class CatnavigationComponent {
+  @Output()
+  categoryCliked: EventEmitter<number> = new EventEmitter<number>();
 
-  constructor(private categoriesService: CategoriesService) { }
+  displayOptions: boolean = true;
 
+  constructor(public categoriesStore: CategoriesStoreItem, private router: Router) {
+    router.events.pipe(filter(event => event instanceof NavigationEnd)).subscribe(event => {
+      this.displayOptions = (event as NavigationEnd).url === 'home/products' ? true : false;
+    })
+  }
 
-  ngOnInit(): void {
-    this.getCategories();
-}
-  getCategories() {
-    this.categoriesService.getCategories().subscribe(
-      data => this.categories = data,
-      error => console.error(error) 
-    );
+  onCategoryClick(category: Category): void {
+    this.categoryCliked.emit(category.id);
   }
 
 }

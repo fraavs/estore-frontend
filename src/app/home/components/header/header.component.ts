@@ -28,10 +28,16 @@ export class HeaderComponent implements OnInit {
 
   logout() {
     this.usersService.logout().subscribe(() => {
-      this.username = null;
+      this.resetState();
       console.log('Logged out successfully');
       this.router.navigate(['/home'])
     });
+  }
+
+  resetState() {
+    this.username = null; // Clear the username
+    // Reset any other states if needed
+    // For example, if you have user-related flags or data, reset them here
   }
 
   navigateToLogin() {
@@ -46,6 +52,7 @@ export class HeaderComponent implements OnInit {
 
   searchClicked: EventEmitter<SearchKeyword> = new EventEmitter<SearchKeyword>();
   displaySearch: boolean = true;
+  
   isUserAuthenticated: boolean = false;
 
 

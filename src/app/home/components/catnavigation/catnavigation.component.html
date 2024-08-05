@@ -3,7 +3,7 @@
         <ul>
             <li><a routerLink="/home/products">HOME</a></li>
             <ng-container>
-                <li *ngFor="let category of categories">
+                <li *ngFor="let category of categoriesStore.categories$ | async">
                     <a>{{category.name}}</a>
                 </li>
             </ng-container>

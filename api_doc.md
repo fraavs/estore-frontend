@@ -159,8 +159,6 @@
 ```
 ## Admin Endpoints
 
-
-
 ### Category Management
 
 
@@ -594,13 +592,10 @@
 
 
 
-## Client Endpoints
 
 ## General Endpoints
 
 ### Product Browsing
-
-
 
 #### List Products
 
