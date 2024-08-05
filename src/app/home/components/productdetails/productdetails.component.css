@@ -1,0 +1,79 @@
+.container {
+    max-width: 100%;
+}
+
+.product-details-container {
+    margin: auto;
+    padding: 1em;
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.product-details-container .product-image-container {
+    text-align: center;
+}
+
+.product-details-container .product-image-container a {
+    cursor: pointer;
+}
+
+.product-details-container .product-image-container img {
+    height: 25em;
+    border-radius: 10px;
+    padding-bottom: 10px;
+    width: 400px;
+    height: 400px;
+}
+
+.product-details-container .product-information-container {
+    padding-left: 3em;
+}
+
+.product-details-container .product-information-container #product-name {
+    font-size: 25px;
+    font-weight: 700;
+    margin-right: 1em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.product-details-container .product-information-container .product-price {
+    font-weight: 400;
+    color: gray;
+    font-size: 20px;
+}
+
+.product-details-container .product-information-container .product-price .price {
+    font-size: 25px;
+    font-weight: 700;
+    color: black;
+}
+
+.container .product-details-container .product-information-container .product-price .cart-button {
+    margin: 0 auto;
+}
+
+.container .product-details-container .product-information-container .product-price .product-description {
+    font-size: 25px;
+    margin-top: 2%;
+}
+.container .product-details-container .product-information-container .product-price .cart-button .btn {
+    margin-top: 2%;
+    outline: none;
+    width: 150px;
+    height: 70px;
+    margin-left: 40%;
+    border: 1px solid black;
+    padding-bottom: 1%;
+}
+
+.container .product-details-container .product-information-container .product-price .cart-button .btn .cart-icon-container {
+    margin-top: 2%;
+}
+
+.container .product-details-container .product-information-container .product-price .cart-button .btn:hover {
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    transition: 0.3s ease-in-out;
+}

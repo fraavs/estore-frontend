@@ -17,7 +17,18 @@ import { MatIconModule } from '@angular/material/icon';
 import { ProductsComponent } from './components/products/products.component';
 import { ProductdetailsComponent } from './components/productdetails/productdetails.component';
 import { CartComponent } from './components/cart/cart.component';
-
+import { CategoriesService } from "./services/categories/categories.service";
+import { CategoriesStoreItem } from "./services/categories/categories.storeItem";
+import { ProductsService } from "./services/products/products.service";
+import { ProductsStoreItem } from "./services/products/products.storeItem";
+import { CartStoreItem } from "./services/cart/cart.storeItem";
+import { UsersService } from "./services/users/users.service";
+import { OrdersService } from "./services/orders/orders.service";
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
     declarations: [
@@ -41,8 +52,21 @@ import { CartComponent } from './components/cart/cart.component';
         FormsModule,
         MatMenuModule,
         MatIconModule,
+        MatExpansionModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatDatepickerModule,
+        MatNativeDateModule
     ],
-    providers: []
+    providers: [
+        CategoriesService,
+        CategoriesStoreItem,
+        ProductsService,
+        ProductsStoreItem,
+        CartStoreItem,
+        UsersService,
+        OrdersService,
+    ]
 })
 
 export class HomeModule { }

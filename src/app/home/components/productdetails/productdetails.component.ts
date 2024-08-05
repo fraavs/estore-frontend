@@ -3,8 +3,6 @@ import { Product } from '../../types/product.type';
 import { Subscription } from 'rxjs';
 import { ProductsService } from '../../services/products/products.service';
 import { ActivatedRoute } from '@angular/router';
-import { CartStoreItem } from '../../services/cart/cart.storeItem';
-
 
 @Component({
   selector: 'app-productdetails',
@@ -24,22 +22,23 @@ export class ProductdetailsComponent implements OnInit, OnDestroy {
   };
   subscription: Subscription = new Subscription();
 
-  constructor(private productsService: ProductsService, private activateRoute: ActivatedRoute, private cart: CartStoreItem) { }
+  constructor(private productsService: ProductsService, private activateRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
     const id: number = Number(this.activateRoute.snapshot.paramMap.get('id'));
     this.subscription.add(
-      this.productsService.getProductById(id).subscribe(product => {
-        this.product = product[0];
-      })
+      this.productsService.getProductById(id).subscribe((product: Product) => {
+          this.product = product;
+      },
+      error => {
+        console.error('There was an error while fetching the product: ', error);
+      }
+    )
     );
-  }
-
-  addToCart() {
-    this.cart.addProduct(this.product);
   }
 
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }
+
 }

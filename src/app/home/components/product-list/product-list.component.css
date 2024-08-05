@@ -14,3 +14,8 @@
     padding: 10px 10px;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
+
+.container .row .main-product .main-text {
+    margin-left: 50px;
+    margin-top: 25px;
+}

@@ -46,7 +46,7 @@
 .search .search-button {
     border-width: 1px;
     border-color: black;
-    height: 32px;
+    height: 34px;
     margin: 5px 5px;
     width: 100px;
     margin-right: 100px;
@@ -57,6 +57,7 @@
     transition: 0.3s ease-in-out;
     color: white;
     background-color: black;
+    cursor: pointer;
 }
 
 .login-container {
@@ -64,19 +65,19 @@
 }
 
 .login-container .btn {
-    font-size: 15px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    height: 35px;
+    height: 34px;
     width: 112px;
-    color: gray;
+    color: black;
     background-color: #f2f2f2;
-    border: none;
+    border: 1px solid black;
 }
 
 .login-container .btn:hover {
     cursor: pointer;
     transition: 0.3s ease-in-out;
-    color: black;
+    color: white;
+    background-color: black;
 }
 
 .cart-wishlist {
@@ -86,4 +87,12 @@
 .cart-wishlist .btn_cart {
     border: none;
     margin-left: 50px;
+    background-color: white;
+}
+
+.cart-wishlist .btn_cart:hover {
+    color: gray;
+    background-color: white;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
 }

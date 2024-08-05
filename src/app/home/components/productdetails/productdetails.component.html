@@ -1,26 +1,31 @@
-<div class="product-details-container">
-    <ng-container *ngIf="product">
-        <div class="product-image-container">
-            <img [src]="'../../../../assets/images/' + product.imgUrl">
-        </div>
+<div class="container">
+    <div class="product-details-container">
+        <ng-container *ngIf="product">
+            <div *ngIf="product.imgUrl" class="product-image-container">
+                <img [src]="'assets/images/' + product.imgUrl" alt="Product Image">
+            </div>
 
-        <div class="product-information-container">
-            <span id="product-name">{{product.name}}</span><hr>
-            <div class="product-price">
-                Price : <span class="price">{{product.price | currency}}</span>
-                <div>Inclusive of all taxes.</div>
-                <div class="product-description">
-                    {{product.description}}
-                </div>
-                <div class="cart-button">
-                    <div class="cart-icon-container">
-                        <mat-icon>shopping_cart</mat-icon>    
+            <div class="product-information-container">
+                <span id="product-name">{{product.name}}</span>
+                <hr>
+                <div class="product-price">
+                    Price : <span class="price">{{product.price | currency}}</span>
+                    <div>Inclusive of all taxes.</div>
+                    <div class="product-description">
+                        {{product.description}}
                     </div>
-                    <div class="cart-text-container">
-                        <p>ADD TO CART</p>
+                    <div class="cart-button">
+                        <button class="btn">
+                            <div class="cart-icon-container">
+                                <mat-icon>shopping_cart</mat-icon>
+                            </div>
+                            <div class="cart-text-container">
+                                <p>ADD TO CART</p>
+                            </div>
+                        </button>
                     </div>
                 </div>
             </div>
-        </div>
-    </ng-container>
+        </ng-container>
+    </div>
 </div>

@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ProductsService } from '../../services/products/products.service';
+import { MatAccordion } from '@angular/material/expansion';
+
 
 @Component({
   selector: 'app-sidenavigation',
@@ -13,12 +15,12 @@ export class SidenavigationComponent implements OnInit {
   constructor(private productsService: ProductsService) { }
 
   ngOnInit(): void {
-    this.fetchProducts();  
+    this.fetchProducts();
   }
 
   fetchProducts() {
     this.productsService.getProducts().subscribe((data: any[]) => {
-      this.products = data.map(product => ({ ...product, isOpen: false}));
+      this.products = data.map(product => ({ ...product, isOpen: false }));
     });
   }
 
@@ -30,7 +32,15 @@ export class SidenavigationComponent implements OnInit {
   }
 
   selectVariant(variantId: number) {
-    console.log( `Selected variant ID: ${variantId}`);
+    console.log(`Selected variant ID: ${variantId}`);
   }
 
+  @ViewChild(MatAccordion)
+  accordion!: MatAccordion;
+
+  flag: boolean = false;
+
+  reverseFlag() {
+    this.flag = !this.flag;
+  }
 }

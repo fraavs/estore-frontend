@@ -11,7 +11,13 @@ import { CategoriesComponent } from './components/categories/categories.componen
 import { OrdersComponent } from './components/orders/orders.component';
 import { FormsModule } from "@angular/forms";
 import { CategoriesService } from "../home/services/categories/categories.service";
+import { CategoriesStoreItem } from "../home/services/categories/categories.storeItem";
+import { ProductsService } from "../home/services/products/products.service";
+import { ProductsStoreItem } from "../home/services/products/products.storeItem";
+import { OrdersService } from "../home/services/orders/orders.service";
 import { MatIconModule } from '@angular/material/icon';
+import { CartStoreItem } from "../home/services/cart/cart.storeItem";
+import { UsersService } from "../home/services/users/users.service";
 
 
 @NgModule({
@@ -34,6 +40,12 @@ import { MatIconModule } from '@angular/material/icon';
     ],
     providers: [
         CategoriesService,
+        CategoriesStoreItem,
+        ProductsService,
+        ProductsStoreItem,
+        CartStoreItem,
+        UsersService,
+        OrdersService,
     ]
 })
 
