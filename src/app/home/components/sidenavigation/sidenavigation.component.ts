@@ -1,7 +1,9 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, EventEmitter, Output } from '@angular/core';
 import { ProductsService } from '../../services/products/products.service';
 import { MatAccordion } from '@angular/material/expansion';
-
+import { CategoriesService } from '../../services/categories/categories.service';
+import { Product } from '../../types/product.type';
+import { Category } from '../../types/category.type';
 
 @Component({
   selector: 'app-sidenavigation',
@@ -9,34 +11,37 @@ import { MatAccordion } from '@angular/material/expansion';
   styleUrls: ['./sidenavigation.component.css']
 })
 export class SidenavigationComponent implements OnInit {
+  categories: Category[] = [];
+  products: { [key: number]: Product[] } = {};
 
-  products: any[] = [];
-
-  constructor(private productsService: ProductsService) { }
+  constructor(private productsService: ProductsService, private categoriesService: CategoriesService) { }
 
   ngOnInit(): void {
-    this.fetchProducts();
+    this.loadCategories();
   }
 
-  fetchProducts() {
-    this.productsService.getProducts().subscribe((data: any[]) => {
-      this.products = data.map(product => ({ ...product, isOpen: false }));
+  loadCategories() {
+    this.categoriesService.getCategories().subscribe(data => {
+      this.categories = data;
     });
   }
 
-  toggleDropdown(productId: number) {
-    const product = this.products.find(p => p.id === productId);
-    if (product) {
-      product.isOpen = !product.isOpen;
+  loadProducts(categoryId: number) {
+    if (!this.products[categoryId]) {
+      this.productsService.getProductsByCategory(categoryId).subscribe(data => {
+        this.products[categoryId] = data;
+      });
     }
+    this.categorySelected.emit(categoryId);
   }
 
-  selectVariant(variantId: number) {
-    console.log(`Selected variant ID: ${variantId}`);
+  @Output() categorySelected = new EventEmitter<number>();
+
+  onTogglePanel(categoryId: number) {
+    this.categorySelected.emit(categoryId);
   }
 
-  @ViewChild(MatAccordion)
-  accordion!: MatAccordion;
+  @ViewChild(MatAccordion) accordion!: MatAccordion;
 
   flag: boolean = false;
 

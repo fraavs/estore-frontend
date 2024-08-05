@@ -1,11 +1,11 @@
 <div class="container">
   <div class="row">
     <div class="main-sidenav">
-      <app-sidenavigation></app-sidenavigation>
+      <app-sidenavigation (categorySelected)="onCategorySelected($event)"></app-sidenavigation>
     </div>
     <div class="main-product">
       <h1 class="main-text">Akazuki Products</h1>
-      <app-products></app-products>
+      <app-products #productsComponent></app-products>
     </div>
   </div>
 </div>

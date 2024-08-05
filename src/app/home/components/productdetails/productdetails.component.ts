@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { Product } from '../../types/product.type';
 import { Subscription } from 'rxjs';
 import { ProductsService } from '../../services/products/products.service';
@@ -40,5 +40,6 @@ export class ProductdetailsComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }
+
 
 }

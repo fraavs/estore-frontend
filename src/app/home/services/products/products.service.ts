@@ -43,4 +43,7 @@ export class ProductsService {
     return this.httpClient.delete(`${this.apiUrl}/${id}`);
   }
 
+  getProductsByCategory(categoryId: number): Observable<Product[]> {
+    return this.httpClient.get<Product[]>(`${this.apiUrlclient}/${categoryId}`);
+  }
 }

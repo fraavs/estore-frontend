@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { ProductsComponent } from '../products/products.component';
 
 @Component({
   selector: 'app-product-list',
@@ -13,16 +14,11 @@ export class ProductListComponent implements OnInit {
     // this.loadProducts();
   }
 
-  // loadProducts() {
-  //   this.http.get('/api/products').subscribe(
-  //     (response: any) => {
-  //       this.products = response;
-  //     },
-  //     error => {
-  //       console.error('Error fetching products:', error);
-  //     }
-  //   );
-  // }
+  @ViewChild(ProductsComponent) productsComponent!: ProductsComponent;
+
+  onCategorySelected(categoryId: number) {
+    this.productsComponent.updateProducts(categoryId);
+  }
 
 
 

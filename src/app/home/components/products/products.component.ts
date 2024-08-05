@@ -11,21 +11,30 @@ import { Category } from '../../types/category.type';
 })
 export class ProductsComponent implements OnInit {
   products: Product[] = [];
+  allProducts: Product[] = [];
   categories: Category[] = [];
 
 
-  constructor(private productsService: ProductsService, private categoriesService: CategoriesService)  { }
+  constructor(private productsService: ProductsService, private categoriesService: CategoriesService) { }
 
   ngOnInit(): void {
-    this.loadProducts();    
+    this.loadProducts();
   }
 
   loadProducts() {
     this.productsService.getAllProduct().subscribe(data => {
+      this.allProducts = data;
       this.products = data;
-    })
+    });
   }
 
+  updateProducts(categoryId: number) {
+    if (categoryId) {
+      this.products = this.allProducts.filter(product => product.categoryId === categoryId);
+    } else {
+      this.products = this.allProducts;
+    }
+  }
 
-
+  
 }
