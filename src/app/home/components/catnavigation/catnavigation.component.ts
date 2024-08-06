@@ -1,8 +1,10 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { CategoriesStoreItem } from '../../services/categories/categories.storeItem';
+import { Component, Output, EventEmitter, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { Category } from '../../types/category.type';
 import { filter } from 'rxjs';
+import { Product } from '../../types/product.type';
+import { ProductsService } from '../../services/products/products.service';
+import { CategoriesService } from '../../services/categories/categories.service';
 
 
 @Component({
@@ -10,20 +12,41 @@ import { filter } from 'rxjs';
   templateUrl: './catnavigation.component.html',
   styleUrls: ['./catnavigation.component.css']
 })
-export class CatnavigationComponent {
-  @Output()
-  categoryCliked: EventEmitter<number> = new EventEmitter<number>();
+export class CatnavigationComponent implements OnInit {
 
+  @Output() categorySelected = new EventEmitter<number>();
+
+  categories: Category[] = [];
+  products: { [key: number]: Product[] } = {};
   displayOptions: boolean = true;
 
-  constructor(public categoriesStore: CategoriesStoreItem, private router: Router) {
+  constructor(private productsService: ProductsService, private categoriesService: CategoriesService, private router: Router) {
     router.events.pipe(filter(event => event instanceof NavigationEnd)).subscribe(event => {
-      this.displayOptions = (event as NavigationEnd).url === 'home/products' ? true : false;
+      this.displayOptions = (event as NavigationEnd).url === '/home/products' ? true : false;
     })
   }
 
-  onCategoryClick(category: Category): void {
-    this.categoryCliked.emit(category.id);
+  ngOnInit(): void {
+    this.loadCategories();
+  }
+
+  loadCategories() {
+    this.categoriesService.getCategories().subscribe(data => {
+      this.categories = data;
+    });
+  }
+
+  loadProducts(categoryId: number) {
+    if (!this.products[categoryId]) {
+      this.productsService.getProductsByCategory(categoryId).subscribe(data => {
+        this.products[categoryId] = data;
+      });
+    }
+    this.categorySelected.emit(categoryId);
+  }
+
+  onCategoryClicked(categoryId: number) {
+    this.categorySelected.emit(categoryId);
   }
 
 }

@@ -1,17 +1,16 @@
 <div class="example-action-buttons">
-    <button *ngIf="!flag" mat-button (click)="accordion.openAll(); reverseFlag();" class="btn">EXPAND ALL</button>
+  <button *ngIf="!flag" mat-button (click)="accordion.openAll(); reverseFlag();" class="btn">EXPAND ALL</button>
   <button *ngIf="flag" mat-button (click)="accordion.closeAll(); reverseFlag();" class="btn">COLLAPSE ALL</button>
 </div>
 
 
 <mat-accordion class="example-headers-align" multi>
-  <mat-expansion-panel *ngFor="let category of categories" (click)="category.id !== undefined && onTogglePanel(category.id)">
+  <mat-expansion-panel *ngFor="let category of categories"
+    (click)="category.id !== undefined && onTogglePanel(category.id)">
     <mat-expansion-panel-header>
       <mat-panel-title>
         {{ category.name }}
       </mat-panel-title>
     </mat-expansion-panel-header>
-
   </mat-expansion-panel>
-
 </mat-accordion>

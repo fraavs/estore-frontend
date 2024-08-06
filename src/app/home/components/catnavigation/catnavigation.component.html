@@ -3,8 +3,8 @@
         <ul>
             <li><a routerLink="/home/products">HOME</a></li>
             <ng-container>
-                <li *ngFor="let category of categoriesStore.categories$ | async">
-                    <a>{{category.name}}</a>
+                <li *ngFor="let category of categories">
+                    <a (click)="category.id !== undefined && onCategoryClicked(category.id)">{{category.name}}</a>
                 </li>
             </ng-container>
         </ul>

@@ -3,6 +3,9 @@ import { ProductsService } from '../../services/products/products.service';
 import { CategoriesService } from '../../services/categories/categories.service';
 import { Product } from '../../types/product.type';
 import { Category } from '../../types/category.type';
+import { CartStoreItem } from '../../services/cart/cart.storeItem';
+import { ProductsStoreItem } from '../../services/products/products.storeItem';
+
 
 @Component({
   selector: 'app-products',
@@ -15,7 +18,12 @@ export class ProductsComponent implements OnInit {
   categories: Category[] = [];
 
 
-  constructor(private productsService: ProductsService, private categoriesService: CategoriesService) { }
+  constructor(
+    private productsService: ProductsService, 
+    private categoriesService: CategoriesService,
+    private cart: CartStoreItem,
+    private productsStore: ProductsStoreItem,
+  ) { }
 
   ngOnInit(): void {
     this.loadProducts();
@@ -36,5 +44,8 @@ export class ProductsComponent implements OnInit {
     }
   }
 
+  addToCart(product: Product) {
+    this.cart.addProduct(product);
+  }
   
 }

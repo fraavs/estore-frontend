@@ -11,6 +11,9 @@
 }
 
 .container .row .main-product {
+    margin-top: 40px;
+    margin-left: 2%;
+    background-color: #f2f2f2;
     padding: 10px 10px;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }

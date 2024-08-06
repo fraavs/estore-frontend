@@ -9,7 +9,7 @@ import { Product } from '../../types/product.type';
 })
 export class ProductsService {
   private apiUrl = 'http://192.168.144.132:3000/api/admin/products';
-  private apiUrlclient = 'http://192.168.144.132:3000/api/product';
+  private apiUrlclient = 'http://192.168.144.132:3000/api/products';
 
   constructor(private httpClient: HttpClient) { }
 

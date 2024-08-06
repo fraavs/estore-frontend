@@ -1,0 +1,31 @@
+.container {
+    max-width: 100%;
+}
+
+.main-container {
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.main-container .main-cart {
+    text-align: center;
+}
+
+.main-container .main-cart .text {
+    font-size: 50px;
+}
+
+.main-container .warning {
+    border: 1px solid black;
+    height: 34px;
+    margin-top: 50px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.main-container .warning:hover {
+    background-color: black;
+    color: white;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}

@@ -48,6 +48,10 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['/home/register']);
   }
 
+  navigateToCart(): void {
+    this.router.navigate(['home/cart']);
+  }
+
   @Output()
 
   searchClicked: EventEmitter<SearchKeyword> = new EventEmitter<SearchKeyword>();
